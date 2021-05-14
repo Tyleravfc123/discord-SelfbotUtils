@@ -1,0 +1,23 @@
+{
+  "name": "discord-selfbot-utils",
+  "version": "1.7.5",
+  "description": "Discord selfbot utils for raids",
+  "main": "discord-selfbot-utils.js",
+  "keywords": [
+    "selfbot",
+    "discord",
+    "discordapi",
+    "discordselfbot",
+    "bot",
+    "utils",
+    "selfbot-utils",
+    "discord-selfbot",
+    "raid"
+  ],
+  "author": "My discord: nyandimon#1213",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "process.argv": "^0.6.0"
+  }
+}

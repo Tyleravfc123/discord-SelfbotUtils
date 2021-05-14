@@ -1,0 +1,6 @@
+Change log from v1.7.4(Stable)
+
+-> Added in 1.7.5:
+1. Changed readme.md
+2. Added Smh folder: Smh📁-|changeLog.txt;
+End 1.7.4.
