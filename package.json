@@ -1,6 +1,6 @@
 {
   "name": "discord-selfbot-utils",
-  "version": "1.7.5",
+  "version": "1.7.6",
   "description": "Discord selfbot utils for raids",
   "main": "discord-selfbot-utils.js",
   "keywords": [
