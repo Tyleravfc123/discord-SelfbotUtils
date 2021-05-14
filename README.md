@@ -7,7 +7,7 @@ mkdir selfbot
 cd selfbot
 npm i discord-selfbot-utils
 ```
-# Code Setup( d-s-u v1.7.4 Stable )
+# Code Setup( d-s-u v1.7.6 Stable )
 ```javascript
 const selfbot = require('discord-selfbot-utils'); // selfbot utils
 selfbot.clearing(); // clears your console
@@ -38,6 +38,6 @@ If you don't need to login to the server, just don't enter the server invite cod
 #### Notice: Server login can't be used at Bot discord account, only selbots.
 #### You can report bug at issues page! Please, do it if you find any bug!
 #### Github page of my utils version
-https://github.com/nyandimon/discordselfbotutils
+https://github.com/nyandimon/discord-SelfbotUtils
 #### Github page of ruby utils version, which inspired me
 https://github.com/hackers-pr/ruby-selfbot-utils#

@@ -14,6 +14,7 @@
     "discord-selfbot",
     "raid"
   ],
+  "homepage": "https://github.com/nyandimon/discord-SelfbotUtils",
   "author": "My discord: nyandimon#1213",
   "license": "ISC",
   "dependencies": {
