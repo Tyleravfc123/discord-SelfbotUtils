@@ -19,19 +19,19 @@ selfbot.login(); // server invite logging
 selfbot.start(message, times); // spam function: times is an amount of messages; message - message variable
 ```
 # Launch
-#### Arguments example:
+* Arguments example:
  ```bash
 node . account_type token target_channel_id server_invite
 ```
-#### Example with user account:
+* Example with user account:
 ```bash
 node . selfbot GeHmee.Shwowlw.wgoowJJhak 68617293018 HdLhHsx
 ```
-#### Example with bot account(You can't invite bot to the server):
+* Example with bot account(You can't invite bot to the server):
 ```bash
 node . bot GeksbwHsj.Hshejzl.jwpWhdc 68617293018
 ```
 If you don't need to login to the server, just don't enter the server invite code.
-#### Notice: Server login can't be used at Bot discord account, only selbots.
+> Notice: Server login can't be used at Bot discord account, only selbots.
 ## Github page of RUBY utils version, which inspired me
-https://github.com/hackers-pr/ruby-selfbot-utils#
+[RubyUtils](httpss://github.com/hackers-pr/ruby-selfbot-utils#)
