@@ -1,11 +1,19 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils/badge)](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils)
+
+## Table of Contents
+
+  - [Description](#Description)
+  - [Installation](#Installation)
+  - [Launch](#Launch)
+  - [Ruby Version](#RubyVersion)
+
 # Description
-This npm package allows you to spam chat with unicode characters & join to servers, verify your account by reaction in a targeted servers.
+This NPM package is written on pure Javascript with some libraries: Axios, process.argv; This package allows you to easily raid small servers.
 # Installation
 ```bash 
 npm i discord-selfbot-utils
 ```
-# Code Setup( d-s-u v1.7.7 Stable )
+# Code Setup( d-s-u v1.7.8 Stable )
 ```javascript
 selfbot.clearing(); // clears your console
 const selfbot = require('discord-selfbot-utils'); // selfbot utils
@@ -31,6 +39,5 @@ node . selfbot GeHmee.Shwowlw.wgoowJJhak 68617293018 HdLhHsx
 ```bash
 node . bot GeksbwHsj.Hshejzl.jwpWhdc 68617293018
 ```
-> Notice: Server login can't be used at Bot discord account, only selbots.
-## Github page of RUBY utils version, which inspired me
+# RubyVersion
 [DiscordUtils](https://github.com/hackers-pr/ruby-selfbot-utils)
