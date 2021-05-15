@@ -34,4 +34,4 @@ node . bot GeksbwHsj.Hshejzl.jwpWhdc 68617293018
 If you don't need to login to the server, just don't enter the server invite code.
 > Notice: Server login can't be used at Bot discord account, only selbots.
 ## Github page of RUBY utils version, which inspired me
-[RubyUtils](httpss://github.com/hackers-pr/ruby-selfbot-utils#)
+![RubyUtils](httpss://github.com/hackers-pr/ruby-selfbot-utils#)
