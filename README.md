@@ -7,8 +7,8 @@ npm i discord-selfbot-utils
 ```
 # Code Setup( d-s-u v1.7.7 Stable )
 ```javascript
-const selfbot = require('discord-selfbot-utils'); // selfbot utils
 selfbot.clearing(); // clears your console
+const selfbot = require('discord-selfbot-utils'); // selfbot utils
 const message = selfbot.gen(1999); // your message or d-s-u generator. You can put here everything after '='
 const axios = selfbot.axios; // axios module
 const arg = selfbot.arg; // process.argv
