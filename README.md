@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils/badge)](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils)
 # Description
 This npm package allows you to spam chat with unicode characters & join to servers, verify your account by reaction in a targeted servers.
 # Installation
