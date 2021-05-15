@@ -1,5 +1,5 @@
 # Description
-This npm package allows you to spam chat with unicode characters & join to servers & verify your account by reaction in a targeted servers.
+This npm package allows you to spam chat with unicode characters & join to servers, verify your account by reaction in a targeted servers.
 # Installation
 ```bash 
 npm i
@@ -36,8 +36,5 @@ node . bot GeksbwHsj.Hshejzl.jwpWhdc 68617293018
 ```
 If you don't need to login to the server, just don't enter the server invite code.
 #### Notice: Server login can't be used at Bot discord account, only selbots.
-#### You can report bug at issues page! Please, do it if you find any bug!
-#### Github page of my utils version
-https://github.com/nyandimon/discord-SelfbotUtils
-#### Github page of ruby utils version, which inspired me
+## Github page of RUBY utils version, which inspired me
 https://github.com/hackers-pr/ruby-selfbot-utils#

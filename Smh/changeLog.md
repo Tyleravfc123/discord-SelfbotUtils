@@ -2,7 +2,7 @@
 
 ## 1.7.5
 * Changed readme.md;
-* Added Smh folder: Smh📁-|changeLog.txt;
+* Added Smh folder: Smh📁-|changeLog.md;
 
 ## 1.7.6
 * Created a new clean repository;
