@@ -4,6 +4,7 @@
 
   - [Description](#Description)
   - [Installation](#Installation)
+  - [Code](#CodeSetup)
   - [Launch](#Launch)
   - [Ruby Version](#RubyVersion)
 
@@ -13,7 +14,7 @@ This NPM package is written on pure Javascript with some libraries: Axios, proce
 ```bash 
 npm i discord-selfbot-utils
 ```
-# Code Setup( d-s-u v1.7.8 Stable )
+# CodeSetup
 ```javascript
 selfbot.clearing(); // clears your console
 const selfbot = require('discord-selfbot-utils'); // selfbot utils
@@ -39,5 +40,5 @@ node . selfbot GeHmee.Shwowlw.wgoowJJhak 68617293018 HdLhHsx
 ```bash
 node . bot GeksbwHsj.Hshejzl.jwpWhdc 68617293018
 ```
-# RubyVersion
+## RubyVersion
 [DiscordUtils](https://github.com/hackers-pr/ruby-selfbot-utils)
