@@ -33,4 +33,4 @@ node . bot GeksbwHsj.Hshejzl.jwpWhdc 68617293018
 ```
 > Notice: Server login can't be used at Bot discord account, only selbots.
 ## Github page of RUBY utils version, which inspired me
-[RubyUtils]: httpss://github.com/hackers-pr/ruby-selfbot-utils
+[DiscordUtils]: https://github.com/hackers-pr/ruby-selfbot-utils
