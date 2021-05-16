@@ -1,12 +1,12 @@
 const axios = require('axios');
 const arg = process.argv.slice(2);
+const dapi = 'https://discordapp.com/api/v8/';
 
 const node = { // arguments object
   acc: arg[0], // account type
   token: arg[1], // token
   cid: arg[2], // channel id
-  serv: arg[3], // server invite code
-  dapi: 'https://discordapp.com/api/v8/' // discord api
+  serv: arg[3] // server invite code
 };
 
 const cautions = { // error messages
@@ -40,7 +40,7 @@ function gen(len) {
 async function login() {
    if(!node.serv) return;
    else {
-       await axios({url: node.dapi + 'invites/' + node.serv, method: 'POST', headers: {Authorization: node.token}}).catch(function(e){console.log(e)});
+       await axios({url: dapi + 'invites/' + node.serv, method: 'POST', headers: {Authorization: node.token}}).catch(function(e){console.log(e)});
    } 
 }
 /**
@@ -52,7 +52,7 @@ async function login() {
 function verify(channel, msg, emji) {
       let newemji = encodeURIComponent(emji);
        axios({
-         url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
+         url: dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
          method: "PUT", 
          headers: {
          authorization: node.token}}).catch(function(e) {
@@ -70,7 +70,7 @@ async function start(message, times) {
    } else if (node.acc === 'selfbot') { // if selfbot parameter
      for(let i=0; i < times; i++) {
          await axios({
-           url: node.dapi + `channels/${node.cid}/messages`,
+           url: dapi + `channels/${node.cid}/messages`,
            method: "POST", 
            headers: {
            authorization: `${node.token}`,
@@ -87,7 +87,7 @@ async function start(message, times) {
 }} else if (node.acc === 'bot') { // bot parameter
    for(let i=0; i < times; i++) {
     await axios({
-      url: node.dapi + `channels/${node.cid}/messages`,
+      url: dapi + `channels/${node.cid}/messages`,
       method: "POST", 
       headers: {
        authorization: `Bot ${node.token}`,
@@ -108,6 +108,7 @@ async function start(message, times) {
 //export------------------------|
 module.exports.axios = axios;
 module.exports.arg = arg;
+module.exports.dapi = dapi;
 module.exports.node = node;
 module.exports.cautions = cautions;
 module.exports.clearing = clearing;
