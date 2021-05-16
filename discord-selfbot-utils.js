@@ -95,9 +95,9 @@ async function start(message, times) {
        data: JSON.stringify({content: message})
      }).then(console.log(cautions.ms)).catch(function(e) {
        if(e.response.status == 429) {
-       console.log(cautions.dst);
+       console.log(cautions.dst + e);
        } else if (e.response.status == 403) {
-      console.log(cautions.bp);
+      console.log(cautions.bp + e);
        } else {
         console.log(cautions.sww)}
        });
