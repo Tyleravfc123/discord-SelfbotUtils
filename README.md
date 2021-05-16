@@ -23,9 +23,8 @@ const selfbot = require('discord-selfbot-utils'); // selfbot utils
 const message = selfbot.gen(1999); // your message or d-s-u generator. You can put here everything after '='
 const axios = selfbot.axios; // axios module
 const arg = selfbot.arg; // process.argv
-const dapi = selfbot.dapi; // discord api
 const cautions = selfbot.cautions; // error catcher's
-const node = selfbot.node; // arguments
+const node = selfbot.node; // arguments and discord api
 selfbot.verify(channel, msg, emoji); // reaction verify
 selfbot.login(); // server invite logging
 selfbot.start(message, times); // spam function: times is an amount of messages; message - message variable
