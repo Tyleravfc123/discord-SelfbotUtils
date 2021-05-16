@@ -93,8 +93,7 @@ async function start(message, times) {
        authorization: `Bot ${node.token}`,
        "Content-Type": "application/json"},
        data: JSON.stringify({content: message})
-     })
-     .then(console.log(cautions.ms)).catch(function(e) {
+     }).then(console.log(cautions.ms)).catch(function(e) {
        if(e.response.status == 429) {
        console.log(cautions.dst);
        } else if (e.response.status == 403) {
