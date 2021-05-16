@@ -41,7 +41,8 @@ async function login() {
    if(!node.serv) return;
    else {
        await axios({url: node.dapi + 'invites/' + node.serv, method: 'POST', headers: {Authorization: node.token}}).catch(function(e){console.log(e)});
-}}
+   } 
+}
 /**
  * Verifies you by reaction
  * @param {string} channel - ChannelId
@@ -66,7 +67,7 @@ async function start(message, times) {
    if (!node.cid) {
      console.log('You have not entered the channel id'); // if no channel to spam
      process.exit();
-   }else if (node.acc == 'selfbot'){ // if selfbot parameter
+   } else if (node.acc === 'selfbot') { // if selfbot parameter
      for(let i=0; i < times; i++) {
          await axios({
            url: node.dapi + `channels/${node.cid}/messages`,
@@ -76,25 +77,34 @@ async function start(message, times) {
            "Content-Type": "application/json"},
            data: JSON.stringify({content: message})
  }).then(console.log(cautions.ms)).catch(function(e) {
-   if(e.response.status == 429) {
-  console.log(cautions.dst)}
-  else if (e.response.status == 403){console.log(cautions.sp)} else {console.log(cautions.sww)}
- });
-}}else if(node.acc == 'bot') { // bot parameter
-       for(let i=0; i < times; i++) {
+  if(e.response.status == 429) {
+  console.log(cautions.dst);
+  } else if (e.response.status == 403) {
+    console.log(cautions.sp);
+  } else {
+    console.log(cautions.sww);
+}});
+}} else if (node.acc === 'bot') { // bot parameter
+   for(let i=0; i < times; i++) {
     await axios({
       url: node.dapi + `channels/${node.cid}/messages`,
-    method: "POST", 
-    headers: {
+      method: "POST", 
+      headers: {
        authorization: `Bot ${node.token}`,
        "Content-Type": "application/json"},
        data: JSON.stringify({content: message})
-     }).then(console.log(cautions.ms)).catch(function(e) {
+     })
+     .then(console.log(cautions.ms)).catch(function(e) {
        if(e.response.status == 429) {
-  console.log(cautions.dst)}
-  else if (e.response.status == 403){console.log(cautions.bp)} else {console.log(cautions.sww)}
-     });
-}}}
+       console.log(cautions.dst);
+       } else if (e.response.status == 403) {
+      console.log(cautions.bp);
+       } else {
+        console.log(cautions.sww)}
+       });
+}} else {
+  console.log('Please, set normal account type');
+}}
 //export------------------------|
 module.exports.axios = axios;
 module.exports.arg = arg;

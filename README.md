@@ -1,6 +1,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils/badge)](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils)
 
-> Stable branch
+> Unstable branch
 
 ## Table of Contents
 
