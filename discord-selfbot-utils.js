@@ -1,6 +1,5 @@
 const axios = require('axios');
 const arg = process.argv.slice(2);
-
 const node = { // arguments object
   acc: arg[0], // account type
   token: arg[1], // token
