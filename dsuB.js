@@ -70,7 +70,6 @@ async function start(message, times) {
      console.log('You have not entered the channel id'); // if no channel to spam
      process.exit();
    } else if (node.acc === 'selfbot') { // if selfbot parameter
-    try {
      for(let i=0; i < times; i++) {
        await axios({
         url: node.dapi + `channels/${node.cid}/messages`,
@@ -78,10 +77,9 @@ async function start(message, times) {
         headers: {
         authorization: `${node.token}`,
         "Content-Type": "application/json"},
-        data: JSON.stringify({content: message})});
-      }
-    } catch (err) {
-       console.log('Error: ' + err);
+        data: JSON.stringify({content: message})}).then(console.log('Message sent')).catch((e) => {
+           console.log('Error: ' + e);
+        });
 }} else if (node.acc === 'bot') { // bot parameter
    for(let i=0; i < times; i++) {
     await axios({
@@ -91,7 +89,7 @@ async function start(message, times) {
        authorization: `Bot ${node.token}`,
        "Content-Type": "application/json"},
        data: JSON.stringify({content: message})
-     }).then(console.log('Message sen')).catch((e) => {
+     }).then(console.log('Message sent')).catch((e) => {
        console.log('Error: ' + e);
      });
    }
