@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/nyandimon/discord-SelfbotUtils/issues"
   },
-  "homepage": "https://github.com/nyandimon/discord-SelfbotUtils/tree/features#readme"
+  "homepage": "https://github.com/nyandimon/discord-SelfbotUtils/tree/features#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "process.argv": "^0.6.0"
+  }
 }
