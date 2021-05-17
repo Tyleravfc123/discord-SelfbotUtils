@@ -83,7 +83,6 @@ async function start(message, times) {
     } catch (err) {
        console.log('Error: ' + err);
 }} else if (node.acc === 'bot') { // bot parameter
-  try {
    for(let i=0; i < times; i++) {
     await axios({
       url: node.dapi + `channels/${node.cid}/messages`,
@@ -92,9 +91,9 @@ async function start(message, times) {
        authorization: `Bot ${node.token}`,
        "Content-Type": "application/json"},
        data: JSON.stringify({content: message})
-     })}
-  } catch (err) {
-      console.log('Error: ' + err);
+     }).then(console.log('Message sen')).catch((e) => {
+       console.log('Error: ' + e);
+     });
    }
 } else {
    console.log('Please, set existing account type');
