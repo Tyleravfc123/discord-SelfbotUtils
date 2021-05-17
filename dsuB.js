@@ -49,15 +49,13 @@ async function login() {
  */
 async function verify(channel, msg, emji) {
    let newemji = encodeURIComponent(emji);
-   try {
      await axios({
-        url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
+        url: `${node.dapi}channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
-        authorization: node.token}});
-   } catch (err) {
-       console.log('Error: ' + err);
-   }
+        authorization: node.token}}).then(console.log('Verified if no errors')).catch((e) => {
+          console.log('Error: ' + e);
+          });
 }
 
 /**
