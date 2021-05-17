@@ -1,0 +1,19 @@
+{
+  "name": "discordsub",
+  "version": "1.0.1",
+  "description": "Beta version of discord-selfbot-utils. DO NOT INSTALL PLEASE",
+  "main": "dsuB.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyandimon/discord-SelfbotUtils.git#features"
+  },
+  "author": "discord: nyandimon#1213",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nyandimon/discord-SelfbotUtils/issues"
+  },
+  "homepage": "https://github.com/nyandimon/discord-SelfbotUtils/tree/features#readme"
+}
