@@ -47,13 +47,15 @@ async function login() {
  * @param {string} msg - MessageId in this channel
  * @param {string} emji - Emoji name:id
  */
-async function verify(channel, msg, emji) {
+function verify(channel, msg, emji) {
    let newemji = encodeURIComponent(emji);
-     await axios({
+     axios({
         url: `${node.dapi}channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
-        authorization: node.token}}).then(console.log('Verified if no errors')).catch((e) => {
+        authorization: node.token}})
+        .then(console.log('Successfully verified'))
+        .catch((e) => {
           console.log('Error: ' + e);
           });
 }
