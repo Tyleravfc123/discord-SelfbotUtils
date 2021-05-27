@@ -50,7 +50,7 @@ async function login() {
 async function verify(channel, msg, emji) {
    let newemji = encodeURIComponent(emji);
      await axios({
-        url: `${node.dapi}channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
+        url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
         authorization: node.token}})
