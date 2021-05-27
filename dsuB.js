@@ -54,7 +54,6 @@ async function verify(channel, msg, emji) {
         method: "PUT", 
         headers: {
         authorization: node.token}})
-        .then(console.log('Successfully verified'))
         .catch((e) => {
           console.log('Error: ' + e);
           });
