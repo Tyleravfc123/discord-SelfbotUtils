@@ -47,9 +47,9 @@ async function login() {
  * @param {string} msg - MessageId in this channel
  * @param {string} emji - Emoji name:id
  */
-function verify(channel, msg, emji) {
+async function verify(channel, msg, emji) {
    let newemji = encodeURIComponent(emji);
-     axios({
+     await axios({
         url: `${node.dapi}channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {

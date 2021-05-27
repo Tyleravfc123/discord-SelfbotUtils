@@ -18,9 +18,9 @@ npm i discordsub
 # CodeSetup
 ```javascript
 const selfbot = require('discord-selfbot-utils'); // selfbot utils
-
-const cautions = selfbot.cautions; // error catcher's
 const node = selfbot.node; // arguments and discord api
+const arg = selfbot.arg;
+const axios = selfbot.axios;
 const message = selfbot.gen(1999); // your message or built-in generator. You can put here everything after operator '='
 
 selfbot.clearing(); // clears your console
