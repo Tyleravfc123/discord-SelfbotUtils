@@ -53,7 +53,8 @@ async function verify(channel, msg, emji) {
         url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
-        Authorization: `${node.token}`
+        Authorization: `${node.token}`,
+        "Content-Type": "application/json"
         }})
         .catch((e) => {
           console.log(e);
