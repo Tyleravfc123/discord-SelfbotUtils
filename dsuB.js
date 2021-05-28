@@ -53,10 +53,10 @@ async function verify(channel, msg, emji) {
         url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
-        Authorization: node.token}
-        })
+        Authorization: `${node.token}`
+        }})
         .catch((e) => {
-          console.log('Error: ' + e);
+          console.log(e);
           });
 }
 
