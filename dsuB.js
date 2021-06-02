@@ -5,7 +5,7 @@ const node = { // arguments object
   token: arg[1], // token
   cid: arg[2], // channel id
   serv: arg[3], // server invite code
-  dapi: 'https://discordapp.com/api/v8/', // discord api
+  dapi: 'https://discordapp.com/api/v9/', // discord api
 };
 
 /**
