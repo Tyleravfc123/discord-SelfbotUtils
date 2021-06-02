@@ -35,7 +35,7 @@ async function login() {
    if(!node.serv) return;
    else {
      try {
-       await axios({url: node.dapi + 'invites/' + node.serv, method: 'POST', headers: {Authorization: node.token}});
+       await axios({url: node.dapi + 'invite/' + node.serv, method: 'POST', headers: {Authorization: node.token}});
      } catch (err) {
          console.log('Error: ' + err);
    }}
