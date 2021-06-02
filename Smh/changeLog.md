@@ -17,8 +17,8 @@
 ## 1.8.3
 * Changed cautions, because im stupid;
 * Optimized code;
-## ToDo
 ## 1.8.5
-* Changed a lot of code parts
-* Changed functions to the newest api
-> Fix verify function
+* Changed a lot of code parts;
+* Changed functions to the newest api;
+* Deleted cautions;
+* Fixed Verify func............;

@@ -1,6 +1,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils/badge)](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils)
 
-> Stable branch (but caution: Verify function isn't working due to api changes. Idk how to fix that bug. If you know, discord: überdimon#1213)
+> Stable branch
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ const axios = selfbot.axios; // axios
 const message = selfbot.gen(1999); // your message or built-in generator. You can put here everything after operator '='
 
 selfbot.clearing(); // clears your console
-selfbot.verify(channel, msg, emoji); // reaction verify
+selfbot.verify(channel, msg, emoji); // reaction verify; ONLY FOR SELFBOTS!!!!!!
 selfbot.login(); // server invite logging
 selfbot.start(message, times); // spam fumessage where times is an amount of messages; message - message variable
 ```
@@ -40,7 +40,7 @@ const arg = selfbot.arg;
 const axios = selfbot.axios;
 const message = 'HELLO'; // or: selfbot.gen(count)
 selfbot.clearing();
-selfbot.verify(6819284747291, 571892847471, 'emoji:01837749291');
+selfbot.verify(6819284747291, 571892847471, 'emoji:01837749291'); 
 selfbot.login();
 selfbot.start(message, 5);
 ```
