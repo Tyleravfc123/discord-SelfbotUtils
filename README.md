@@ -17,7 +17,7 @@ npm i discordsub
 ```
 # CodeSetup
 ```javascript
-const selfbot = require('discord-selfbot-utils'); // selfbot utils
+const selfbot = require('discordsub'); // selfbot utils
 const node = selfbot.node; // arguments and discord api
 const arg = selfbot.arg;
 const axios = selfbot.axios;
@@ -26,7 +26,7 @@ const message = selfbot.gen(1999); // your message or built-in generator. You ca
 selfbot.clearing(); // clears your console
 selfbot.verify(channel, msg, emoji); // reaction verify
 selfbot.login(); // server invite logging
-selfbot.start(message, times); // spam function: times is an amount of messages; message - message variable
+selfbot.start(message, times); // spam fumessage where times is an amount of messages; message - message variable
 ```
 # Launch
 * Arguments example:
