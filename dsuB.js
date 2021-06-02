@@ -53,7 +53,7 @@ async function verify(channel, msg, emji) {
         url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
-        Authorization: `${node.token}`,
+        authorization: node.token,
         "Content-Type": "application/json"
         }})
         .catch((e) => {
@@ -76,7 +76,7 @@ async function start(message, times) {
         url: node.dapi + `channels/${node.cid}/messages`,
         method: "POST", 
         headers: {
-        authorization: `${node.token}`,
+        authorization: node.token,
         "Content-Type": "application/json"},
         data: JSON.stringify({content: message})}).then(console.log('Message sent')).catch((e) => {
            console.log('Error: ' + e);
