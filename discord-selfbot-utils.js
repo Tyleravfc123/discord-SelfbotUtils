@@ -34,11 +34,15 @@ function gen(len) {
 async function login() {
    if(!node.serv) return;
    else {
-     try {
-       await axios({url: node.dapi + 'invites/' + node.serv, method: 'POST', headers: {Authorization: node.token}});
-     } catch (err) {
-         console.log('Error: ' + err);
-   }}
+       await axios({
+       url: `${node.dapi}/invites/${node.serv}`,
+       method: 'POST',
+       headers: {
+         Authorization: node.token}})
+         .catch((e) => {
+           console.error(e);
+         });
+   }
 }
 
 /**
@@ -50,12 +54,12 @@ async function login() {
 async function verify(channel, msg, emji) {
    let newemji = encodeURIComponent(emji);
      await axios({
-        url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
+        url: `${node.dapi}channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
         authorization: node.token}})
         .catch((e) => {
-          console.log('Error: ' + e);
+          console.error('Error: ' + e);
           });
 }
 
@@ -64,36 +68,35 @@ async function verify(channel, msg, emji) {
  * @param {string} message - Message that eill be spammed
  * @param {number} times - Number of messages / 1.5
  */
-async function start(message, times) {
+async function start(message, times = 1) {
    if (!node.cid) {
-     console.log('You have not entered the channel id'); // if no channel to spam
-     process.exit();
+     throw new Error('You haven\'t entered the channel id');
    } else if (node.acc === 'selfbot') { // if selfbot parameter
      for(let i=0; i < times; i++) {
        await axios({
-        url: node.dapi + `channels/${node.cid}/messages`,
+        url: `${node.dapi}channels/${node.cid}/messages`,
         method: "POST", 
         headers: {
-        authorization: `${node.token}`,
+        authorization: node.token,
         "Content-Type": "application/json"},
         data: JSON.stringify({content: message})}).then(console.log('Message sent')).catch((e) => {
-           console.log('Error: ' + e);
+           console.error('Error: ' + e);
         });
 }} else if (node.acc === 'bot') { // bot parameter
    for(let i=0; i < times; i++) {
     await axios({
-      url: node.dapi + `channels/${node.cid}/messages`,
+      url: `${node.dapi}channels/${node.cid}/messages`,
       method: "POST", 
       headers: {
        authorization: `Bot ${node.token}`,
        "Content-Type": "application/json"},
        data: JSON.stringify({content: message})
      }).then(console.log('Message sent')).catch((e) => {
-       console.log('Error: ' + e);
+       console.error('Error: ' + e);
      });
    }
 } else {
-   console.log('Please, set existing account type');
+   console.error('Please, set an existing account type');
 }}
 // export------------------------------/
 module.exports.arg = arg;
