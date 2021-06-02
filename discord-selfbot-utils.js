@@ -1,26 +1,20 @@
-const axios = require('axios');
 const arg = process.argv.slice(2);
+const axios = require('axios');
 const node = { // arguments object
   acc: arg[0], // account type
   token: arg[1], // token
   cid: arg[2], // channel id
   serv: arg[3], // server invite code
-  dapi: 'https://discordapp.com/api/v8/' // discord api
+  dapi: 'https://discordapp.com/api/v8/', // discord api
 };
 
-const cautions = { // error messages
-  sww: 'Something went wrong',
-  sp: "Your account got phonelocked/banned trough discord OR you logging into 'selfbot' with 'bot' parameter'",
-  bp: "Your account got phonelocked/banned trough discord OR you logging into 'bot' with 'selfbot' parameter' OR channel is forbidden",
-  dst: 'Discord sending timeout',
-  ms: 'message sent'
-};
 /**
  * Clears console
  */
 function clearing() {
    let clearing = require('process').stdout.write('\x1Bc');
 }
+
 /** 
  * Generates a lot of symbols
  * @param {number} len - length of the message
@@ -33,30 +27,38 @@ function gen(len) {
    text = text.replace(/\`/g, "").replace(/\r?\n/g, "");
    return text;
 }
+
 /**
  * Logs you into the server with invite
  */
 async function login() {
    if(!node.serv) return;
    else {
-       await axios({url: node.dapi + 'invites/' + node.serv, method: 'POST', headers: {Authorization: node.token}}).catch(function(e){console.log(e)});
-   } 
+     try {
+       await axios({url: node.dapi + 'invites/' + node.serv, method: 'POST', headers: {Authorization: node.token}});
+     } catch (err) {
+         console.log('Error: ' + err);
+   }}
 }
+
 /**
  * Verifies you by reaction
  * @param {string} channel - ChannelId
  * @param {string} msg - MessageId in this channel
  * @param {string} emji - Emoji name:id
  */
-function verify(channel, msg, emji) {
-      let newemji = encodeURIComponent(emji);
-       axios({
-         url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
-         method: "PUT", 
-         headers: {
-         authorization: node.token}}).catch(function(e) {
-             console.log(e)});
+async function verify(channel, msg, emji) {
+   let newemji = encodeURIComponent(emji);
+     await axios({
+        url: node.dapi + `channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
+        method: "PUT", 
+        headers: {
+        authorization: node.token}})
+        .catch((e) => {
+          console.log('Error: ' + e);
+          });
 }
+
 /**
  * Starts the spam
  * @param {string} message - Message that eill be spammed
@@ -68,21 +70,15 @@ async function start(message, times) {
      process.exit();
    } else if (node.acc === 'selfbot') { // if selfbot parameter
      for(let i=0; i < times; i++) {
-         await axios({
-           url: node.dapi + `channels/${node.cid}/messages`,
-           method: "POST", 
-           headers: {
-           authorization: `${node.token}`,
-           "Content-Type": "application/json"},
-           data: JSON.stringify({content: message})
- }).then(console.log(cautions.ms)).catch(function(e) {
-  if(e.response.status == 429) {
-  console.log(cautions.dst);
-  } else if (e.response.status == 403) {
-    console.log(cautions.sp);
-  } else {
-    console.log(cautions.sww);
-}});
+       await axios({
+        url: node.dapi + `channels/${node.cid}/messages`,
+        method: "POST", 
+        headers: {
+        authorization: `${node.token}`,
+        "Content-Type": "application/json"},
+        data: JSON.stringify({content: message})}).then(console.log('Message sent')).catch((e) => {
+           console.log('Error: ' + e);
+        });
 }} else if (node.acc === 'bot') { // bot parameter
    for(let i=0; i < times; i++) {
     await axios({
@@ -92,22 +88,17 @@ async function start(message, times) {
        authorization: `Bot ${node.token}`,
        "Content-Type": "application/json"},
        data: JSON.stringify({content: message})
-     }).then(console.log(cautions.ms)).catch(function(e) {
-       if(e.response.status == 429) {
-       console.log(cautions.dst);
-       } else if (e.response.status == 403) {
-      console.log(cautions.bp);
-       } else {
-        console.log(cautions.sww)}
-       });
-}} else {
-  console.log('Please, set normal account type');
+     }).then(console.log('Message sent')).catch((e) => {
+       console.log('Error: ' + e);
+     });
+   }
+} else {
+   console.log('Please, set existing account type');
 }}
-//export------------------------|
-module.exports.axios = axios;
+// export------------------------------/
 module.exports.arg = arg;
+module.exports.axios = axios;
 module.exports.node = node;
-module.exports.cautions = cautions;
 module.exports.clearing = clearing;
 module.exports.gen = gen;
 module.exports.verify = verify;

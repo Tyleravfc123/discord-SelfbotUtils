@@ -8,13 +8,17 @@
     "discord",
     "discordapi",
     "bot",
-    "discord-selfbot",
+    "discord selfbot",
     "raid",
-    "discord raid"
+    "discord raid",
+    "dapi"
   ],
   "repository": "https://github.com/nyandimon/discord-SelfbotUtils",
-  "author": "My discord: nyandimon#1213",
+  "author": "My discord: überdimon#1213",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nyandimon/discord-SelfbotUtils/issues"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "process.argv": "^0.6.0"

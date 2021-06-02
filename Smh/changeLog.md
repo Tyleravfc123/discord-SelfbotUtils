@@ -18,4 +18,7 @@
 * Changed cautions, because im stupid;
 * Optimized code;
 ## ToDo
-> I need to change response handler and optimize start fx into 2 ifs
+## 1.8.5
+* Changed a lot of code parts
+* Changed functions to the newest api
+> Fix verify function

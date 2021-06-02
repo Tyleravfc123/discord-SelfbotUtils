@@ -1,6 +1,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils/badge)](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils)
 
-> Stable branch
+> Stable branch (but caution: Verify function isn't working due to api changes. Idk how to fix that bug. If you know, discord: überdimon#1213)
 
 ## Table of Contents
 
@@ -11,27 +11,42 @@
   - [Ruby Version](#RubyVersion)
 
 # Description
-This NPM package is written on pure Javascript with some libraries: Axios, process.argv; This package allows you to easily raid small servers.
+This NPM package is written on pure Javascript with one library - Axios. This package allows you to easily raid small servers.
 # Installation
 ```bash 
 npm i discord-selfbot-utils
 ```
 # CodeSetup
+* Basic example
 ```javascript
 selfbot.clearing(); // clears your console
 const selfbot = require('discord-selfbot-utils'); // selfbot utils
-const message = selfbot.gen(1999); // your message or d-s-u generator. You can put here everything after '='
-const axios = selfbot.axios; // axios module
-const arg = selfbot.arg; // process.argv
-const cautions = selfbot.cautions; // error catcher's
 const node = selfbot.node; // arguments and discord api
+const arg = selfbot.arg; // process.argv
+const axios = selfbot.axios; // axios
+const message = selfbot.gen(1999); // your message or built-in generator. You can put here everything after operator '='
+
+selfbot.clearing(); // clears your console
 selfbot.verify(channel, msg, emoji); // reaction verify
 selfbot.login(); // server invite logging
-selfbot.start(message, times); // spam function: times is an amount of messages; message - message variable
+selfbot.start(message, times); // spam fumessage where times is an amount of messages; message - message variable
+```
+* Real example
+```javascript
+selfbot.clearing(); 
+const selfbot = require('discord-selfbot-utils');
+const node = selfbot.node;
+const arg = selfbot.arg; 
+const axios = selfbot.axios;
+const message = 'HELLO'; // or: selfbot.gen(count)
+selfbot.clearing();
+selfbot.verify(6819284747291, 571892847471, 'emoji:01837749291');
+selfbot.login();
+selfbot.start(message, 5);
 ```
 # Launch
 * Arguments example:
- ```bash
+```bash
 node . account_type token target_channel_id server_invite
 ```
 * Example with user account:
