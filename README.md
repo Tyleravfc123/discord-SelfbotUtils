@@ -57,4 +57,4 @@ node . bot GeksbwHsj.Hshejzl.jwpWhdc 826769681196777512
 #### Ruby version of Javascript D-S-U; Origin made by my friend
 [Rubied:D-S-U](https://github.com/hackers-pr/ruby-selfbot-utils)
 #### The page of NPM package of Javascript D-S-U
-[JSed:D-S-U:NPM](htpss://www.npmjs.com/package/discord-selfbot-utils)
+[JSed:D-S-U:NPM](https://www.npmjs.com/package/discord-selfbot-utils)
