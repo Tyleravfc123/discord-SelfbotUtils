@@ -1,5 +1,3 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils/badge)](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils)
-
 > Stable branch
 
 ## Table of Contents
@@ -56,7 +54,7 @@ node . selfbot GeHmee.Shwowlw.wgoowJJhak 826769681196777512
 node . bot GeksbwHsj.Hshejzl.jwpWhdc 826769681196777512
 ```
 ## Additional-Content
-> Ruby version of Javascript D-S-U; Origin made by my friend
+Ruby version of Javascript D-S-U; Origin made by my friend
 [Rubied:D-S-U](https://github.com/hackers-pr/ruby-selfbot-utils)
-> The page of NPM package of Javascript D-S-U
+The page of NPM package of Javascript D-S-U
 [JSed:D-S-U:NPM](htpss://www.npmjs.com/package/discord-selfbot-utils)
