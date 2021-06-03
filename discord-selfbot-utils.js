@@ -4,7 +4,6 @@ const node = { // arguments object
   acc: arg[0], // account type
   token: arg[1], // token
   cid: arg[2], // channel id
-  serv: arg[3], // server invite code
   dapi: 'https://discordapp.com/api/v8/', // discord api
 };
 
@@ -30,19 +29,19 @@ function gen(len) {
 
 /**
  * Logs you into the server with invite
+ * @param {string} invitecode - the code of server invite
  */
-async function login() {
-   if(!node.serv) return;
-   else {
+async function login(invitecode) {
+  if (Object.prototype.toString.call(invitecode) === "[object String]") {
        await axios({
-       url: `${node.dapi}/invites/${node.serv}`,
+       url: `${node.dapi}/invites/${invitecode}`,
        method: 'POST',
        headers: {
-         Authorization: node.token}})
-         .catch((e) => {
-           console.error(e);
-         });
-   }
+       Authorization: node.token}})
+       .catch((e) => {
+         console.error(e);
+       });
+  } else console.error('Is an invitecode === \'[object String]\'?');
 }
 
 /**
