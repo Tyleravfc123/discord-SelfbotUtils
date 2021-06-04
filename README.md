@@ -17,28 +17,28 @@ npm i discord-selfbot-utils
 # CodeSetup
 * Basic example
 ```javascript
-const selfbot = require('discord-selfbot-utils'); // selfbot utils
-selfbot.clearing(); // clears your console
-const node = selfbot.node; // arguments and discord api
-const arg = selfbot.arg; // process.argv
-const axios = selfbot.axios; // axios
-const message = selfbot.gen(count); // your message or built-in generator. You can put here everything after operator '='
+const sb = require('discord-selfbot-utils'); // selfbot utils
+sb.clearing(); // standart:'\x1Bc'; or your clearing method. example: sb.clearing('special symbols...');
+const node = sb.node; // arguments and discord api
+const arg = sb.arg; // process.argv
+const axios = sb.axios; // axios
+const message = sb.gen(count); // your message or built-in generator. You can put here everything after operator '='
 
-selfbot.verify(channel, msg, emoji); // verify by reaction: string; Selfbots function only
-selfbot.login(invitecode); // server login: string
-selfbot.start(message, times); // spam func; where times is an amount of messages; message - message variable
+sb.verify(channel, msg, emoji); // verify by reaction: string; Selfbots function only
+sb.login(invitecode); // server login: string
+sb.start(message, times); // spam func; where times is an amount of messages; message - message variable
 ```
 * Real example
 ```javascript
-const selfbot = require('discord-selfbot-utils');
-const node = selfbot.node;
-const arg = selfbot.arg; 
-const axios = selfbot.axios;
+const sb = require('discord-selfbot-utils');
+const node = sb.node;
+const arg = sb.arg; 
+const axios = sb.axios;
 const message = 'Hello!'; // or: selfbot.gen(1999)
-selfbot.clearing();
-selfbot.verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
-selfbot.login('HdLhHsx');
-selfbot.start(message, 5);
+sb.clearing();
+sb.verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
+sb.login('HdLhHsx');
+sb.start(message, 5);
 ```
 # Launch
 * Arguments example:
@@ -47,7 +47,7 @@ node . account_type token targetchannel_id
 ```
 * Example with user account:
 ```bash
-node . selfbot GeHmee.Shwowlw.wgoowJJhak 826769681196777512
+node . sbot GeHmee.Shwowlw.wgoowJJhak 826769681196777512
 ```
 * Example with bot account:
 ```bash

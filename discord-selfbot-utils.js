@@ -72,7 +72,7 @@ async function verify() {
 async function start(message, times = 1) {
    if (!node.cid) {
      throw new Error('You haven\'t entered the channel id');
-   } else if (node.acc === 'selfbot') { // if selfbot parameter
+   } else if (node.acc === 'sbot') { // if selfbot parameter
      for(let i=0; i < times; i++) {
        await axios({
         url: `${node.dapi}channels/${node.cid}/messages`,
