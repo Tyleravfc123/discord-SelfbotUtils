@@ -10,15 +10,15 @@ const node = { // arguments object
 /**
  * Clears console
  */
-function clearing() {
-   let clearing = require('process').stdout.write('\x1Bc');
+function clearing(cl = '\x1Bc') {
+   let clearing = require('process').stdout.write(cl);
 }
 
 /** 
  * Generates a lot of symbols
  * @param {number} len - length of the message
  */
-function gen(len) {
+function gen(len = 1999) {
    let text = "";
    for(let i = 0; i < len; i++) {
      text += String.fromCharCode(Math.floor(Math.random() * 2000));
@@ -31,17 +31,17 @@ function gen(len) {
  * Logs you into the server with invite
  * @param {string} invitecode - the code of server invite
  */
-async function login(invitecode) {
-  if (Object.prototype.toString.call(invitecode) === "[object String]") {
+async function login() {
+  if (arguments[0] == undefined) return;
+  else {
        await axios({
-       url: `${node.dapi}/invites/${invitecode}`,
+       url: `${node.dapi}/invites/${arguments[0]}`,
        method: 'POST',
        headers: {
        Authorization: node.token}})
        .catch((e) => {
          console.error(e);
-       });
-  } else console.error('Is an invitecode === \'[object String]\'?');
+       })}
 }
 
 /**
@@ -50,16 +50,18 @@ async function login(invitecode) {
  * @param {string} msg - MessageId in this channel
  * @param {string} emji - Emoji name:id
  */
-async function verify(channel, msg, emji) {
-   let newemji = encodeURIComponent(emji);
+async function verify() {
+  if (arguments[0] == undefined) return;
+  else {
+   let newemji = encodeURIComponent(arguments[2]);
      await axios({
-        url: `${node.dapi}channels/${channel}/messages/${msg}/reactions/${newemji}/@me`,
+        url: `${node.dapi}channels/${arguments[0]}/messages/${arguments [1]}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
         authorization: node.token}})
         .catch((e) => {
           console.error('Error: ' + e);
-          });
+          })}
 }
 
 /**
