@@ -1,6 +1,6 @@
 module.exports = {
 //-Cnt----------------------------------------
-  arg: process.argv(slice(2)),
+  arg: process.argv.slice(2),
   axios: require('axios'),
   acc: arg[0], // account type
   token: arg[1], // token
