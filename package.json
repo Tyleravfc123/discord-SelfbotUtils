@@ -1,6 +1,6 @@
 {
   "name": "discordsub",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Beta version of discord-selfbot-utils. DO NOT INSTALL PLEASE",
   "main": "dsuB.js",
   "scripts": {
