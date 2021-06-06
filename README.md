@@ -1,5 +1,3 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils/badge)](https://www.codefactor.io/repository/github/nyandimon/discord-selfbotutils)
-
 > UNSTABLE features branch (in testing and may not work)
 
 ## Table of Contents
