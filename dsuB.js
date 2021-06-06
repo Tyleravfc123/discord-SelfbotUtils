@@ -70,7 +70,7 @@ async function verify() {
  * @param {string} message - Message that eill be spammed
  * @param {number} times - Number of messages / 1.5
  */
-async function start(message, times = 1) {
+async function spam(message, times = 1) {
    if (!node.cid) {
      throw new Error('You haven\'t entered the channel id');
    } else if (node.acc === 'sbot') { // if selfbot parameter
@@ -113,6 +113,6 @@ module.exports = {
   gen,
   login, 
   verify, 
-  start,
+  spam,
   modix
 };
