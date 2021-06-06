@@ -10,7 +10,7 @@
   - [Launch](#Launch)
 
 # Description
-This unstable branch is not supported in use, it only under development. I will make 2nd npm package for this branch, named 'd-s-uBeta'. 
+Testing version of a discord-selfbot-utils package
 # Installation
 ```bash 
 npm i discordsub
@@ -21,23 +21,23 @@ const selfbot = require('discordsub'); // selfbot utils
 const node = selfbot.node; // arguments and discord api
 const arg = selfbot.arg;
 const axios = selfbot.axios;
-const message = selfbot.gen(1999); // your message or built-in generator. You can put here everything after operator '='
+const message = selfbot.gen(count); // your message or built-in generator. You can put here everything after operator '='
 
 selfbot.clearing(); // clears your console
 selfbot.verify(channel, msg, emoji); // reaction verify
-selfbot.login(); // server invite logging
+selfbot.login(invitecode); // server invite code; Selfbots only
 selfbot.start(message, times); // spam fumessage where times is an amount of messages; message - message variable
 ```
 # Launch
 * Arguments example:
  ```bash
-node . account_type token target_channel_id server_invite
+node . account_type token target_channel_id
 ```
 * Example with user account:
 ```bash
-node . selfbot GeHmee.Shwowlw.wgoowJJhak 68617293018 HdLhHsx
+node . selfbot GeHmee.Shwowlw.wgoowJJhak 68617293018
 ```
-* Example with bot account(You can't invite bot to the server):
+* Example with bot account:
 ```bash
 node . bot GeksbwHsj.Hshejzl.jwpWhdc 68617293018
 ```
