@@ -103,7 +103,6 @@ async function start(message, times = 1) {
 
 let modix = () => {
   console.log(module);
-  console.dir(module);
 };
 
 module.exports = {
