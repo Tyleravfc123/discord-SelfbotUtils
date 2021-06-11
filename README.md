@@ -34,7 +34,7 @@ const sb = require('discord-selfbot-utils');
 const node = sb.node;
 const arg = sb.arg; 
 const axios = sb.axios;
-const message = 'Hello!'; // or: selfbot.gen(1999)
+const message = 'Hello!'; // or: sb.gen(1999)
 sb.clearing();
 sb.verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
 sb.login('HdLhHsx');
