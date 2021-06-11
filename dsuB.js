@@ -2,9 +2,8 @@ const arg = process.argv.slice(2);
 const axios = require('axios');
 
 const node = { // arguments object
-  acc: arg[0], // account type
-  token: arg[1], // token
-  cid: arg[2], // channel id
+  token: arg[0], // token
+  cid: arg[1], // channel id
   dapi: 'https://discordapp.com/api/v8/', // discord api
 };
 
@@ -73,7 +72,8 @@ async function verify() {
 async function spam(message, times = 1) {
    if (!node.cid) {
      throw new Error('You haven\'t entered the channel id');
-   } else if (node.acc === 'sbot') { // if selfbot parameter
+   }
+   else {
      for(let i=0; i < times; i++) {
        await axios({
         url: `${node.dapi}channels/${node.cid}/messages`,
@@ -83,8 +83,10 @@ async function spam(message, times = 1) {
         "Content-Type": "application/json"},
         data: JSON.stringify({content: message})}).then(console.log('Message sent')).catch((e) => {
            console.error('Error: ' + e);
-        });
-}} else if (node.acc === 'bot') { // bot parameter
+        })}
+}}
+
+async function spamtest(message, times = 1) {
    for(let i=0; i < times; i++) {
     await axios({
       url: `${node.dapi}channels/${node.cid}/messages`,
@@ -96,15 +98,9 @@ async function spam(message, times = 1) {
      }).then(console.log('Message sent')).catch((e) => {
        console.error('Error: ' + e);
      });
-   }
-} else {
-   console.error('Please, set an existing account type');
 }}
 
-let modix = () => {
-  console.log(module);
-};
-
+ 
 module.exports = {
   arg,
   axios,
@@ -114,5 +110,5 @@ module.exports = {
   login, 
   verify, 
   spam,
-  modix
+  spamtest
 };
