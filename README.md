@@ -17,7 +17,7 @@ npm i discord-selfbot-utils
 # CodeSetup
 * Arguments
 ```javascript
-const { spam, verify, login, node, axios, arg, gen, clearing } = require('discordsub');
+const { spam, verify, login, node, axios, arg, gen, clearing } = require('discord-selfbot-utils');
 const message = gen(count); // your message or built-in generator. You can put here everything after operator '='
 
 clearing(); // standart: '\x1Bc' or your clearing method. example: clearing('special symbols...');
@@ -27,7 +27,7 @@ spam(message, times); // where times is an amount of messages; message - message
 ```
 * Example
 ```javascript
-const { spam, verify, login, node, axios, arg, gen, clearing } = require('discordsub');
+const { spam, verify, login, node, axios, arg, gen, clearing } = require('discord-selfbot-utils');
 const message = 'Hello!'; // or: gen(1999)
 clearing();
 verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
