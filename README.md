@@ -15,43 +15,33 @@ This NPM package is written on pure Javascript with one library - Axios. This pa
 npm i discord-selfbot-utils
 ```
 # CodeSetup
-* Basic example
+* Arguments
 ```javascript
-const sb = require('discord-selfbot-utils'); // selfbot utils
-sb.clearing(); // standart:'\x1Bc'; or your clearing method. example: sb.clearing('special symbols...');
-const node = sb.node; // arguments and discord api
-const arg = sb.arg; // process.argv
-const axios = sb.axios; // axios
-const message = sb.gen(count); // your message or built-in generator. You can put here everything after operator '='
+const { spam, verify, login, node, axios, arg, gen, clearing } = require('discordsub');
+const message = gen(count); // your message or built-in generator. You can put here everything after operator '='
 
-sb.verify(channel, msg, emoji); // verify by reaction: string; Selfbots function only
-sb.login(invitecode); // server login: string
-sb.start(message, times); // spam func; where times is an amount of messages; message - message variable
+clearing(); // standart: '\x1Bc' or your clearing method. example: clearing('special symbols...');
+verify(channel, msg, emoji); // verify by reaction: string; Selfbots function only
+login(invitecode); // server invite code; Selfbots only
+spam(message, times); // where times is an amount of messages; message - message variable; Selfbots only
 ```
-* Real example
+* Example
 ```javascript
-const sb = require('discord-selfbot-utils');
-const node = sb.node;
-const arg = sb.arg; 
-const axios = sb.axios;
-const message = 'Hello!'; // or: sb.gen(1999)
-sb.clearing();
-sb.verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
-sb.login('HdLhHsx');
-sb.start(message, 5);
+const { spam, verify, login, node, axios, arg, gen, clearing } = require('discordsub');
+const message = 'Hello!'; // or: gen(1999)
+clearing();
+verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
+login('HdLhHsx');
+spam(message, 5);
 ```
 # Launch
 * Arguments example:
-```bash
-node . account_type token targetchannel_id
+ ```bash
+node . token channel_id
 ```
 * Example with user account:
 ```bash
-node . sbot GeHmee.Shwowlw.wgoowJJhak 826769681196777512
-```
-* Example with bot account:
-```bash
-node . bot GeksbwHsj.Hshejzl.jwpWhdc 826769681196777512
+node . GeHmee.Shwowlw.wgoowJJhak 68617293018
 ```
 ## Additional-Content
 #### Ruby version of Javascript D-S-U; Origin made by my friend
