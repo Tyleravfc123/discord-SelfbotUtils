@@ -87,6 +87,8 @@ async function spam(message, times = 1) {
 }}
 
 async function spamtest(message, times = 1) {
+  if (!node.cid) return;
+  else
    for(let i=0; i < times; i++) {
     await axios({
       url: `${node.dapi}channels/${node.cid}/messages`,
