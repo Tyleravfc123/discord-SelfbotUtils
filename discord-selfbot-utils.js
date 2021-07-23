@@ -16,7 +16,8 @@ const successMessage = (origin) => {
 const node = { // arguments object
   token: arg[0], // token
   cid: arg[1], // channel id
-  dapi: "https://discordapp.com/api/v8/" // discord api
+  dapi: "https://discordapp.com/api/v8/", // discord api
+  isBot: false
 };
 
 /**
@@ -93,13 +94,15 @@ async function spam(message, times = 1) {
    if (!node.cid) {
      throw new Error("You haven't entered the channel id");
    }
-   else 
+   else {
+     let botSpace;
+     let botSpaceChecker = (node.isBot === true) ? botSpace = "Bot " : botSpace = "";
      for(let i = 0; i < times; i++) {
        await axios({
         url: `${node.dapi}channels/${node.cid}/messages`,
         method: "POST", 
         headers: {
-        authorization: node.token,
+        authorization: botSpace + node.token,
         "Content-Type": "application/json"},
         data: JSON.stringify({content: message})
        })
@@ -107,6 +110,7 @@ async function spam(message, times = 1) {
         .catch(err => 
            console.error(errorMessage(err)));
      }
+   }
 }
 
 module.exports = {

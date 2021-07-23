@@ -27,13 +27,16 @@ spam(message, times); // where times is an amount of messages; message - message
 ```
 * Example
 ```javascript
-const { spam, verify, login, node, axios, arg, gen, clearing } = require('discord-selfbot-utils');
+const { spam, verify, login, node, axios, arg, gen, clearing, chalk, errorMessage, sucessMessage } = require('discord-selfbot-utils');
 const message = 'Hello!'; // or: gen(1999)
 clearing();
 verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
 login('HdLhHsx');
 spam(message, 5);
 ```
+* SpecialFunctions
+`node.isBot` is a new parameter.\n
+If that parameter is set to **true**, code will launch as bot only.
 # Launch
 * Arguments example:
  ```bash
