@@ -1,4 +1,4 @@
-> Stable branch
+> Unstable branch (May not work properly)
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ npm i discord-selfbot-utils
 # CodeSetup
 * Arguments
 ```javascript
-const { spam, verify, login, node, axios, arg, gen, clearing } = require('discord-selfbot-utils');
+const { spam, verify, login, node, axios, arg, gen, clearing, chalk, errorMessage, successMessage } = require('discord-selfbot-utils');
 const message = gen(count); // your message or built-in generator. You can put here everything after operator '='
 
 clearing(); // standart: '\x1Bc' or your clearing method. example: clearing('special symbols...');

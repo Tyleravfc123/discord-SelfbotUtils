@@ -1,10 +1,22 @@
+/*jshint loopfunc:true */
 const arg = process.argv.slice(2);
-const axios = require('axios');
+const axios = require("axios");
+
+const chalk = require("chalk");
+
+const errorMessage = (origin) => {
+    let strOrigin = String(origin);
+    return chalk.bold.red("Error!\n") + chalk.red(strOrigin);
+};
+const successMessage = (origin) => {
+    let strOrigin = String(origin);
+    return chalk.bold.green(strOrigin);
+};
 
 const node = { // arguments object
   token: arg[0], // token
   cid: arg[1], // channel id
-  dapi: 'https://discordapp.com/api/v8/', // discord api
+  dapi: "https://discordapp.com/api/v8/" // discord api
 };
 
 /**
@@ -36,11 +48,14 @@ async function login() {
   else {
        await axios({
        url: `${node.dapi}/invites/${arguments[0]}`,
-       method: 'POST',
+       method: "POST",
        headers: {
        Authorization: node.token}})
-       .catch((e) => {
-         console.error(e);
+       .then(res => {
+           console.log(successMessage("Login was successful!"));
+       })
+       .catch(err => {
+         console.error(errorMessage(err));
        })}
 }
 
@@ -58,10 +73,15 @@ async function verify() {
         url: `${node.dapi}channels/${arguments[0]}/messages/${arguments [1]}/reactions/${newemji}/@me`,
         method: "PUT", 
         headers: {
-        authorization: node.token}})
-        .catch((e) => {
-          console.error('Error: ' + e);
-          })}
+        authorization: node.token}
+     })
+     .then(res => {
+       console.log(successMessage("Verified!"));
+     })
+     .catch(err => {
+       console.error(errorMessage("Error!\n") + err);
+      })
+  }
 }
 
 /**
@@ -71,19 +91,22 @@ async function verify() {
  */
 async function spam(message, times = 1) {
    if (!node.cid) {
-     throw new Error('You haven\'t entered the channel id');
+     throw new Error("You haven't entered the channel id");
    }
    else 
-     for(let i=0; i < times; i++) {
+     for(let i = 0; i < times; i++) {
        await axios({
         url: `${node.dapi}channels/${node.cid}/messages`,
         method: "POST", 
         headers: {
         authorization: node.token,
         "Content-Type": "application/json"},
-        data: JSON.stringify({content: message})}).then(console.log('Message sent')).catch((e) => {
-           console.error('Error: ' + e);
-        })}
+        data: JSON.stringify({content: message})
+       })
+        .then(res => console.log(successMessage("Message sent")))
+        .catch(err => 
+           console.error(errorMessage(err)));
+     }
 }
 
 module.exports = {
@@ -94,5 +117,8 @@ module.exports = {
   gen,
   login, 
   verify, 
-  spam
+  spam,
+  chalk,
+  errorMessage,
+  successMessage
 };

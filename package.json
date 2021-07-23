@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "process.argv": "^0.6.0"
+    "process.argv": "^0.6.0",
+    "chalk": "^4.1.1"
   }
 }
