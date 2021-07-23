@@ -2,6 +2,13 @@
 const arg = process.argv.slice(2);
 const axios = require("axios");
 
+const node = { // arguments object
+  token: arg[0], // token
+  cid: arg[1], // channel id
+  dapi: "https://discordapp.com/api/v8/", // discord api
+  isBot: false
+};
+
 const chalk = require("chalk");
 
 const errorMessage = (origin) => {
@@ -13,12 +20,6 @@ const successMessage = (origin) => {
     return chalk.bold.green(strOrigin);
 };
 
-const node = { // arguments object
-  token: arg[0], // token
-  cid: arg[1], // channel id
-  dapi: "https://discordapp.com/api/v8/", // discord api
-  isBot: false
-};
 
 /**
  * Clears console
@@ -67,7 +68,7 @@ async function login() {
  * @param {string} emji - Emoji name:id
  */
 async function verify() {
-  if (arguments[0] == undefined) return;
+  if (arguments[0] === undefined) return;
   else {
    let newemji = encodeURIComponent(arguments[2]);
      await axios({
@@ -91,7 +92,7 @@ async function verify() {
  * @param {number} times - Number of messages / 1.5
  */
 async function spam(message, times = 1) {
-   if (!node.cid) {
+   if (node.cid === undefined) {
      throw new Error("You haven't entered the channel id");
    }
    else {
