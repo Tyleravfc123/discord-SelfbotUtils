@@ -35,8 +35,7 @@ login('HdLhHsx');
 spam(message, 5);
 ```
 * SpecialFunctions
-`node.isBot` is a new parameter.\n
-If that parameter is set to **true**, code will launch as bot only.
+`node.isBot` is a new parameter. If that parameter is set to **true**, code will launch as bot only.
 # Launch
 * Arguments example:
  ```bash
