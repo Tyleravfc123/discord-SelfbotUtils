@@ -1,6 +1,6 @@
 {
   "name": "discord-selfbot-utils",
-  "version": "1.9.8",
+  "version": "1.9.9",
   "description": "The discord selfbot utils for mini raids, written on pure JS with Axios",
   "main": "discord-selfbot-utils.js",
   "keywords": [
