@@ -14,18 +14,20 @@ const node = { // arguments object
 const chalk = require("chalk");
 
 const messages = {
-    
+    // errors
     errorMessage: (originStr) => {
         
       let strOrigin = String(originStr);
       return chalk.bold.red("Error!\n") + chalk.red(strOrigin); 
       
     },
+    // non error
     successMessage: (originStr) => {
 
       let strOrigin = String(originStr);
         
     },
+    // fixable error
     alertMessage: (originStr) => {
        
        let strOrigin = String(originStr);
@@ -129,7 +131,7 @@ async function spam(message, times = 1) {
    }
 }
 
-// export
+// export 
 
 module.exports = {
   arg,
