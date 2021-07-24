@@ -1,6 +1,6 @@
 {
   "name": "discord-selfbot-utils",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "The discord selfbot utils for mini raids, written on JS.",
   "main": "discord-selfbot-utils.js",
   "keywords": [
