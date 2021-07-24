@@ -107,7 +107,7 @@ async function verify() {
  */
 async function spam(message, times = 1) {
    if (node.cid === undefined) {
-     consolr.error(messages.alertMessage(("Error:\nChannel id isn't defined.")));
+     console.error(messages.alertMessage(("Error:\nChannel id isn't defined.")));
      return;
    }
    else {
