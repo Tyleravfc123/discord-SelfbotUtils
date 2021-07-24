@@ -141,6 +141,5 @@ module.exports = {
   verify, 
   spam,
   chalk,
-  errorMessage,
-  successMessage
+  messages
 };
