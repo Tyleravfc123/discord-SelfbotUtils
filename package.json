@@ -1,7 +1,7 @@
 {
   "name": "discord-selfbot-utils",
   "version": "2.0.6",
-  "description": "The discord selfbot utils for mini raids, written on pure JS with Axios",
+  "description": "The discord selfbot utils for mini raids, written on JS.",
   "main": "discord-selfbot-utils.js",
   "keywords": [
     "selfbot",
@@ -13,8 +13,8 @@
     "discord raid",
     "dapi"
   ],
-  "repository": "https://github.com/nyandimon/discord-SelfbotUtils",
-  "author": "My discord: UeberDimon#1313",
+  "repository": "https://github.com/ueberdimon/discord-SelfbotUtils",
+  "author": "My discord: dmitryundead#0613",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nyandimon/discord-SelfbotUtils/issues"
