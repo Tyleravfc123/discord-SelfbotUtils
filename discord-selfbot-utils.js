@@ -18,7 +18,7 @@ const messages = {
     errorMessage: (originStr) => {
         
       let strOrigin = String(originStr);
-      return chalk.bold.red("Error!\n") + chalk.red(strOrigin); 
+      return chalk.bold.red("Error: ") + chalk.red(strOrigin); 
       
     },
     // non error
@@ -32,7 +32,7 @@ const messages = {
     alertMessage: (originStr) => {
        
        let strOrigin = String(originStr);
-       return chalk.bold.orange("Error!\n") + chalk.orange(strOrigin);
+       return chalk.bold.yellow("Error: ") + chalk.yellow(strOrigin);
         
     }
     
