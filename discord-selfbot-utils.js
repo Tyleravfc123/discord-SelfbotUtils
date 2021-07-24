@@ -9,17 +9,31 @@ const node = { // arguments object
   isBot: false
 };
 
+// console stylizing
+
 const chalk = require("chalk");
 
-const errorMessage = (origin) => {
-    let strOrigin = String(origin);
-    return chalk.bold.red("Error!\n") + chalk.red(strOrigin);
-};
-const successMessage = (origin) => {
-    let strOrigin = String(origin);
-    return chalk.bold.green(strOrigin);
-};
+const messages = {
+    
+    errorMessage: (originStr) => {
+        
+      let strOrigin = String(originStr);
+      return chalk.bold.red("Error!\n") + chalk.red(strOrigin); 
+      
+    },
+    successMessage: (originStr) => {
 
+      let strOrigin = String(originStr);
+        
+    },
+    alertMessage: (originStr) => {
+       
+       let strOrigin = String(originStr);
+       return chalk.bold.orange("Error!\n") + chalk.orange(strOrigin);
+        
+    }
+    
+};
 
 /**
  * Clears console
@@ -46,7 +60,7 @@ function gen(len = 1999) {
  * @param {string} invitecode - the code of server invite
  */
 async function login() {
-  if (arguments[0] == undefined) return;
+  if (arguments[0] === undefined) return;
   else {
        await axios({
        url: `${node.dapi}/invites/${arguments[0]}`,
@@ -54,10 +68,10 @@ async function login() {
        headers: {
        Authorization: node.token}})
        .then(res => {
-           console.log(successMessage("Login was successful!"));
+           console.log(messages.successMessage("Login was successful!"));
        })
        .catch(err => {
-         console.error(errorMessage(err));
+         console.error(messages.errorMessage(err));
        })}
 }
 
@@ -78,10 +92,10 @@ async function verify() {
         authorization: node.token}
      })
      .then(res => {
-       console.log(successMessage("Verified!"));
+       console.log(messages.successMessage("Verified!"));
      })
      .catch(err => {
-       console.error(errorMessage("Error!\n") + err);
+       console.error(messages.errorMessage("Error!\n") + err);
       })
   }
 }
@@ -93,7 +107,8 @@ async function verify() {
  */
 async function spam(message, times = 1) {
    if (node.cid === undefined) {
-     throw new Error("You haven't entered the channel id");
+     consolr.error(messages.alertMessage(("Error:\nChannel id isn't defined.")));
+     return;
    }
    else {
      let botSpace;
@@ -107,12 +122,14 @@ async function spam(message, times = 1) {
         "Content-Type": "application/json"},
         data: JSON.stringify({content: message})
        })
-        .then(res => console.log(successMessage("Message sent")))
+        .then(res => console.log(messages.successMessage("Message sent")))
         .catch(err => 
-           console.error(errorMessage(err)));
+           console.error(messages.errorMessage(err)));
      }
    }
 }
+
+// export
 
 module.exports = {
   arg,

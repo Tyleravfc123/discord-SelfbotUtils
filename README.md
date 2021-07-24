@@ -34,8 +34,6 @@ verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800');
 login('HdLhHsx');
 spam(message, 5);
 ```
-* SpecialFunctions
-`node.isBot` is a new parameter. If that parameter is set to **true**, code will launch as bot only.
 # Launch
 * Arguments example:
  ```bash
@@ -45,6 +43,12 @@ node . token channel_id
 ```bash
 node . GeHmee.Shwowlw.wgoowJJhak 68617293018
 ```
+* Usable-Stuff
+> `node.isBot` is a new parameter. If that parameter is set to **true**, code will launch as bot only.
+> Red messages mean that error is serious and may not be fixable;
+> Orange messages mean that error is easy to fix (Undefined parameters in code or process.argv);
+> Green messages mean that everything is great;
+
 ## Additional-Content
 #### Ruby version of Javascript D-S-U; Origin made by my friend
 [Rubied:D-S-U](https://github.com/hackers-pr/ruby-selfbot-utils)
