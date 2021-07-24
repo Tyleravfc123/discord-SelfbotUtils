@@ -95,8 +95,8 @@ async function verify() {
        console.log(messages.successMessage("Verified!"));
      })
      .catch(err => {
-       console.error(messages.errorMessage("Error!\n") + err);
-      })
+       console.error(messages.errorMessage(err));
+      });
   }
 }
 
