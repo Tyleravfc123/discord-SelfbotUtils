@@ -25,6 +25,7 @@ const messages = {
     successMessage: (originStr) => {
 
       let strOrigin = String(originStr);
+      return chalk.bold.green(strOrigin);
         
     },
     // fixable error
