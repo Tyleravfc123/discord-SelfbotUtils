@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/nyandimon/discord-SelfbotUtils/issues"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.1",
+    "process.argv": "^0.6.0"
+  }
 }
