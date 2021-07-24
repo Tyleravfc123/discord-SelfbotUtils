@@ -44,7 +44,7 @@ node . token channel_id
 node . GeHmee.Shwowlw.wgoowJJhak 68617293018
 ```
 * Usable-Stuff
-> `node.isBot` is a new parameter. If that parameter is set to **true**, code will launch as bot only.
+> `node.isBot` is a new parameter. If that parameter is set to **true**, code will launch as bot only;
 > Red messages mean that error is serious and may not be fixable;
 > Orange messages mean that error is easy to fix (Undefined parameters in code or process.argv);
 > Green messages mean that everything is great;
