@@ -20,7 +20,7 @@ npm i discord-selfbot-utils
 ```javascript
 const { spam, verify, login, node, axios, arg, gen, clearing, chalk, errorMessage, successMessage } = require('discord-selfbot-utils');
 const message = gen(count); // your message or built-in generator. You can put here everything after operator '='
-
+node.isBot = bool;
 clearing(); // standart: '\x1Bc' or your clearing method. example: clearing('special symbols...');
 verify(channel, msg, emoji); // verify by reaction: string; Selfbots function only
 login(invitecode); // server invite code; Selfbots only
@@ -30,6 +30,7 @@ spam(message, times); // where times is an amount of messages; message - message
 ```javascript
 const { spam, verify, login, node, axios, arg, gen, clearing, chalk, errorMessage, sucessMessage } = require('discord-selfbot-utils');
 const message = 'Hello!'; // or: gen(1999)
+node.isBot = false; // false is set by default 
 clearing();
 verify('826769681196777512', '849685906851364954', 'emoji:777951983872245800'); 
 login('HdLhHsx');
@@ -45,9 +46,9 @@ node . token channel_id
 node . GeHmee.Shwowlw.wgoowJJhak 68617293018
 ```
 # Usable-Stuff
-* `node.isBot` is a new parameter. If that parameter is set to **true**, code will launch as bot only;
-* Red messages mean that error is serious and may not be fixable;
-* Orange messages mean that error is easy to fix (Undefined parameters in code or process.argv);
+* If `node.isBot` is set as **true**, code will launch as bot only (node.isBot = true);
+* Red messages mean that error is serious and may not be eliminated (errors: 429, 401, etc);
+* Orange messages mean that the error can be easily eliminated (Undefined parameters in node varible or process.argv);
 * Green messages mean that everything is great;
 
 ## Additional-Content
